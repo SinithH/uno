@@ -67,7 +67,7 @@ Visit Microsoft's documentation for a primer on UWP : https://docs.microsoft.com
 ## How is Uno platform different from Xamarin forms or Avalonia?
 Multiple techniques can be used to render UI, ranging from rendering pixels in a Frame Buffer (Avalonia), to rendering only using platform-provided controls (Xamarin.Forms). 
 
-While the former provides a high flexibility in terms of rendering fidelity and the ability to add new platforms, it has the drawback of not following the platform native behaviors. For instance, interactions with text boxes, has to be re-implemented completely in order to match the native behavior, and has to be updated regularly to follow platform updates. This approach also makes it very difficult to integrate native UI components "in-canvas", such as Map or Browser controls.
+While the former provides a high flexibility in terms of rendering fidelity and the ability to add new platforms, it has the drawback of not following the platform native behaviors. For instance, interactions with text boxes, have to be re-implemented completely in order to match the native behavior, and has to be updated regularly to follow platform updates. This approach also makes it very difficult to integrate native UI components "in-canvas", such as Map or Browser controls.
 
 The latter, however, provides full fidelity with the underlying platform, making it blend easily with native applications. While this can be interesting for some kinds of applications, designers usually want to have a branded pixel-perfect look and feel which stays consistent across platforms, where drawing primitives are not available.
 
@@ -77,7 +77,7 @@ The Uno Platform sits in the middle, using the power of XAML to provide the abil
 Uno Platform-based applications on iOS and Android are no different than any other Xamarin-based applications. See [the details here](https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform).
 
 ## How does my Uno platform code run on the web?
-On the Web, the application is built using the standard .NET tooling. The application is then transformed into a static website though the [Uno Web Boostrapper](https://github.com/unoplatform/uno.Wasm.Bootstrap), which uses [mono-wasm](https://github.com/mono/mono/tree/master/sdks/wasm) to run the C# code in the browser.
+On the Web, the application is built using the standard .NET tooling. The application is then transformed into a static website through the [Uno Web Boostrapper](https://github.com/unoplatform/uno.Wasm.Bootstrap), which uses [mono-wasm](https://github.com/mono/mono/tree/master/sdks/wasm) to run the C# code in the browser.
 
 ## Is WebAssembly supported in all browsers?
 WebAssembly is supported in 4 major browser engines, see the [WebAssembly official site](https://webassembly.org/roadmap/) for more details.
@@ -119,7 +119,7 @@ All these implementations use the same base XAML definition language, with minor
 
 For instance, WPF has [`System.Windows.Controls.StackPanel`](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.stackpanel?redirectedfrom=MSDN&view=netframework-4.7.2), UWP
 has [`Windows.UI.Xaml.Controls.StackPanel`](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.StackPanel) and Xamarin.Forms
-has [`Xamarin.Forms.StackLayout`](https://docs.microsoft.com/en-us/dotnet/api/Xamarin.Forms.StackLayout?view=xamarin-forms). All three essentially behave in the same way, but have implementation differences and feature differences, though UWP, WPF and Silverlight have a very similar behavior.
+has [`Xamarin.Forms.StackLayout`](https://docs.microsoft.com/en-us/dotnet/api/Xamarin.Forms.StackLayout?view=xamarin-forms). All three essentially behave in the same way, but have implementation differences and feature differences, though UWP, WPF and Silverlight have very similar behavior.
 
 ## Why Mono?
 [Mono](https://github.com/mono/mono) is currently the best (and only) mobile-friendly implementation of .NET that targets iOS, Android and WebAssembly. It shares a lot -- and increasing -- of code from the BCL implementation with [.NET core](https://github.com/dotnet/core), making the runtime behavior very similar and in most cases, identical across platforms.
@@ -149,12 +149,12 @@ Microsoft describes it best in its [What is .NET](https://www.microsoft.com/net/
 # Uno.UI Platforms Frequently Asked Questions
 
 ## Does Uno.UI support a single .NET Standard 2.0 binary model?
-Not at the moment. iOS and Android platform support relies on the underlying APIs being visible through class hierarchy for performance reasons. Also, the .NET Standard model is based on binary sharing, which makes very difficult to use platform features without jumping through hoops such as Dependency Injection, Inversion of Control or reflection.
+Not at the moment. iOS and Android platform support relies on the underlying APIs being visible through class hierarchy for performance reasons. Also, the .NET Standard model is based on binary sharing, which makes it very difficult to use platform features without jumping through hoops such as Dependency Injection, Inversion of Control or reflection.
 
 ## Does Uno.UI support having controls in a class library?
 Yes, here's a project sample.  https://github.com/unoplatform/uno.Samples/tree/master/UI/ControlLibrary. It is also possible to create a new Cross-Platform class library using the [Uno Platform Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=nventivecorp.uno-platform-addin).
 
-## How do I update the to latest Uno.UI NuGet package, I don't see any update ?
+## How do I update to the latest Uno.UI NuGet package, I don't see any update ?
 
 You may want to try our latest dev builds, and here's how to do it:
 
@@ -203,7 +203,7 @@ at System.Threading.Thread.StartInternal (System.Security.Principal.IPrincipal p
 
 Keep the version 1.1.1 of Microsoft.Extensions.Logging; latest version of Logging Extensions is starting a new thread and it's not supported in Wasm.
 
-## Live updates doesn’t work on UWP project. 
+## Live updates don’t work on UWP project. 
 
 For live update on UWP you need to edit the XAML while the project is debugging, no need for save, it updates on every keystroke (more or less) you need to update to the latest UWP sdk in your project configuration, change target version to latest
 
